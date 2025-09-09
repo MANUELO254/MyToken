@@ -21,20 +21,21 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
 
       - name: Show Forge version
+        run: forge --version
+
+      # 👇 Add this step to install forge deps on CI
+      - name: Install dependencies
         run: |
-          forge --version
+          forge install foundry-rs/forge-std openzeppelin/openzeppelin-contracts --no-commit
 
       - name: Run Forge fmt
-        run: |
-          forge fmt --check
+        run: forge fmt --check
         id: fmt
 
       - name: Run Forge build
-        run: |
-          forge build --sizes
+        run: forge build --sizes
         id: build
 
       - name: Run Forge tests
-        run: |
-          forge test -vvv
+        run: forge test -vvv
         id: test
