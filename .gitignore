@@ -1,18 +1,15 @@
-# Compiler files
-cache/
+# Foundry build artifacts
 out/
+cache/
 
-# Ignores development broadcast logs
-!/broadcast
-/broadcast/*/31337/
-/broadcast/**/dry-run/
+# Broadcast logs (transactions, deployments)
+broadcast/
 
-# Docs
+# Dependencies (installed via forge install)
+lib/
+
+# Documentation
 docs/
 
-# Dotenv file
+# Environment variables (private keys, API keys, RPC URLs)
 .env
-lib/
-out/
-broadcast/
-cache/
