@@ -23,10 +23,9 @@ jobs:
       - name: Show Forge version
         run: forge --version
 
-      # 👇 Add this step to install forge deps on CI
+      # 👇 Install dependencies (no commits will be made)
       - name: Install dependencies
-        run: |
-          forge install foundry-rs/forge-std openzeppelin/openzeppelin-contracts --no-commit
+        run: forge install foundry-rs/forge-std openzeppelin/openzeppelin-contracts
 
       - name: Run Forge fmt
         run: forge fmt --check
